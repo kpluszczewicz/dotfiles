@@ -74,7 +74,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 # available, but disabled: git
-plugins=(ssh-agent zsh-history-substring-search)
+plugins=(ssh-agent)
 
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
