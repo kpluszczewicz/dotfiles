@@ -29,6 +29,9 @@ require("lazy").setup("plugins")
 -- "gc" to comment visual regions/lines
 -- { 'numToStr/Comment.nvim', opts = {} },
 
+-- Themery plugin saves to lua/theme.lua selected colorscheme
+require("theme")
+
 require("mappings")
 
 require("autocommands")

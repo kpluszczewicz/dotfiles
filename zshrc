@@ -141,3 +141,10 @@ alias ssh-production-210='ssh serwis@192.168.100.210'
 alias ssh-production-211='ssh serwis@192.168.100.211'
 alias ngrok-koleo='ngrok http --domain=adapting-grub-privately.ngrok-free.app 80'
 # eval "$(zellij setup --generate-auto-start zsh)"
+
+alias ta='tmux attach'
+if [[ "$(uname -n)" == "iMac-Kamil.local" ]]; then
+  alias rozwoj='cd /Users/kamilpluszczewicz/Library/Mobile\ Documents/com~apple~CloudDocs/Rozwój/Rok\ formacyjny\ 2023-2024 && nvim'
+  eval "$(luarocks path)"
+  alias ranger="python3 ~/.programs/ranger/ranger.py"
+fi
