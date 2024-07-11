@@ -67,8 +67,8 @@ bindings = [
   { key = "}", mods = "Command | Shift", command = { program = "/opt/homebrew/bin/tmux", args =  ["select-window", "-n"]} },
   # in order to map Command|Shift-[ to go to next tab you need to use Shift-[ '}' as a key, and also add Shift to mods
   { key = "{", mods = "Command | Shift", command = { program = "/opt/homebrew/bin/tmux", args =  ["select-window", "-p"]} },
-  { key = "j", mods = "Command", command = { program = "/opt/homebrew/bin/tmux", args =  ["split-window", "-h"]} },
-  { key = "l", mods = "Command", command = { program = "/opt/homebrew/bin/tmux", args =  ["split-window", "-v"]} },
+  # To prevent from defult macOs action 'hide'
+  { key = "h", mods = "Command", action="ReceiveChar" },
   # { key = "0", mods = "Command", command = { program = "/opt/homebrew/bin/zellij", args =  ["action", "go-to-tab", "0"]} },
   # { key = "1", mods = "Command", command = { program = "/opt/homebrew/bin/zellij", args =  ["action", "go-to-tab", "1"]} },
   # { key = "2", mods = "Command", command = { program = "/opt/homebrew/bin/zellij", args =  ["action", "go-to-tab", "2"]} },
