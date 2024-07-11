@@ -77,6 +77,27 @@ return {
 							},
 						},
 					},
+					colorscheme = {
+						enable_preview = true,
+						mappings = {
+							i = {
+								["<Return>"] = function()
+									local theme_name = require("telescope.actions.state").get_selected_entry()[1]
+									print(
+										'You have selected "'
+											.. require("telescope.actions.state").get_selected_entry()[1]
+											.. '"'
+									)
+
+									local outfile = io.open(os.getenv("HOME") .. "/.config/nvim/lua/theme.lua", "w")
+									local text = ' vim.cmd("colorscheme ' .. theme_name .. '"); vim.g.theme_id = 1'
+									outfile:write(text)
+									outfile:close()
+									require("telescope.actions").select_default()
+								end,
+							},
+						},
+					},
 				},
 				extensions = {
 					["ui-select"] = {

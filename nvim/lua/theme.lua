@@ -1,0 +1,1 @@
+ vim.cmd("colorscheme catppuccin-macchiato"); vim.g.theme_id = 1
