@@ -90,8 +90,8 @@ bindings = [
   { key = "Return", mods = "Shift", chars = "‚" },
   { key = ";", mods = "Control", chars = "…" }, # it's Option-;
   { key = ".", mods = "Option", chars = "\u001b\u002e"}, # Option-. like Alt-.
-  # { key = "b", mods = "Option", chars = "\u001bb"}, # For Alt-b navigation
-  # { key = "f", mods = "Option", chars = "\u001bf"}, # For Alt-f navigation
+  { key = "b", mods = "Option", chars = "\u001bb"}, # For Alt-b navigation
+  { key = "f", mods = "Option", chars = "\u001bf"}, # For Alt-f navigation
   # { key = "p", mods = "Option", chars = "\u001bp"}, # For Alt-f navigation
   # { key = "n", mods = "Option", chars = "\u001bn"}, # For Alt-f navigation
 ]

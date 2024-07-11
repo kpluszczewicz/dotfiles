@@ -36,3 +36,13 @@ vim.api.nvim_create_user_command("Notes", function()
 	-- local git_branch_name = require("lualine.components.branch.git_branch").get_branch()
 	vim.cmd("vs kamil/" .. git_branch_name() .. ".md")
 end, {})
+
+vim.api.nvim_create_user_command("Rspec", function()
+	local cwd = vim.loop.cwd() or ""
+	local cwd_len = string.len(cwd)
+	local full_path = vim.fn.expand("%")
+	local relative_path = string.sub(full_path, cwd_len + 2)
+
+	print("tmux send-keys -t {marked} 'rspec " .. relative_path .. "' Enter")
+	vim.system({ "tmux", "send-keys", "-t", "{marked}", "rspec ", relative_path, "Enter" }, { text = true })
+end, {})
