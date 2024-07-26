@@ -79,3 +79,4 @@ vim.keymap.set("c", "<C-p>", "<Up>", {})
 -- browse jumplist with <Command>-] like in browser
 -- vim.keymap.set("n", "<D-[>", "<C-o>", {})
 -- vim.keymap.set("n", "<D-]>", "<C-i>", {})
+vim.keymap.set("n", "§", "<cmd>Rspec<cr>", { desc = "Rspec current file" })

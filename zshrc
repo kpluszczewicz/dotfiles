@@ -139,8 +139,10 @@ alias ssh-production-110='ssh serwis@192.168.100.110'
 alias ssh-production-111='ssh serwis@192.168.100.111'
 alias ssh-production-210='ssh serwis@192.168.100.210'
 alias ssh-production-211='ssh serwis@192.168.100.211'
-alias ngrok-koleo='ngrok http --domain=adapting-grub-privately.ngrok-free.app 80'
 # eval "$(zellij setup --generate-auto-start zsh)"
+
+alias merge-to-sandbox='git switch sandbox && git pull && git merge - && git push'
+alias merge-to-staging='git switch staging && git pull && git merge - && git push'
 
 alias ta='tmux attach'
 if [[ "$(uname -n)" == "iMac-Kamil.local" ]]; then
@@ -148,3 +150,9 @@ if [[ "$(uname -n)" == "iMac-Kamil.local" ]]; then
   eval "$(luarocks path)"
   alias ranger="python3 ~/.programs/ranger/ranger.py"
 fi
+
+# capture the output of a command so it can be retrieved with ret
+# cap () { tee /tmp/capture.out; } # WARN: this clashes with capistrano!
+
+# return the output of the most recent command that was captured by cap
+# ret () { cat /tmp/capture.out; }

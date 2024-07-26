@@ -84,6 +84,8 @@ bindings = [
   # { key = "9", mods = "Command", command = { program = "/opt/homebrew/bin/zellij", args =  ["action", "go-to-tab", "9"]} },
   { key = "t", mods = "Command", command = { program = "/opt/homebrew/bin/tmux", args =  ["new-window"]} },
   { key = "f", mods = "Command|Option", action = "ToggleSimpleFullscreen"},
+  { key = "d", mods = "Command", action = "ScrollHalfPageDown"},
+  { key = "u", mods = "Command", action = "ScrollHalfPageUp"},
   { key = "Slash", mods = "Control", chars = "\u001f" }, # fix <C-/> problem
   { key = "Space", mods = "Shift", chars = "Ō" },
   # hack for alacritty to make vim handle <S-Enter> keybinding
@@ -92,6 +94,7 @@ bindings = [
   { key = ".", mods = "Option", chars = "\u001b\u002e"}, # Option-. like Alt-.
   { key = "b", mods = "Option", chars = "\u001bb"}, # For Alt-b navigation
   { key = "f", mods = "Option", chars = "\u001bf"}, # For Alt-f navigation
+  { key = "q", mods = "Option", chars = "\u001bq"}, # For Alt-f navigation
   # { key = "p", mods = "Option", chars = "\u001bp"}, # For Alt-f navigation
   # { key = "n", mods = "Option", chars = "\u001bn"}, # For Alt-f navigation
 ]

@@ -172,7 +172,7 @@ return {
 			wk.register({
 				r = {
 					name = "[R]ails files browsing",
-					t = { rails_find("Search tests", "test/"), "[T]ests - Specs" },
+					t = { rails_find("Search tests", "spec/"), "[T]ests - Specs" },
 					c = { rails_find("Search controllers", "app/controllers"), "[C]ontrollers" },
 					m = { rails_find("Search models...", "app/models/"), "[M]odels" },
 					v = { rails_find("Search views...", "app/views"), "[V]iews" },

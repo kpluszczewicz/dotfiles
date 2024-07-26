@@ -13,24 +13,112 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 app/api/api/base/v1/serializer/payment_method_serializer.rb
-badd +21 kamil/SW-3585-pay-by-link-api-cleanup.md
-badd +12 app/api/api/v2/common/payment_methods_controller.rb
-badd +19 app/api/api/v2/common/payment_orders_controller.rb
-badd +10 app/api/api/v2/common/serializer/order_reservation_serializer.rb
-badd +1 app/models/payment_method.rb
-badd +22 app/models/payment_operator.rb
-badd +1 app/services/p24/connector.rb
-badd +30 ~/koleo/app/services/p24/secure/connector.rb
-badd +1 ~/koleo/app/services/p24/secure/registration_handler/test_payment.rb
-badd +55 ~/koleo/app/services/p24/secure/registration_handler.rb
-badd +17 app/services/p24/secure/api_helper.rb
-badd +56 app/api/api/v2/main/payments_controller.rb
+badd +12 ~/koleo/app/controllers/admin/user_passengers_controller.rb
+badd +10 app/models/passenger.rb
+badd +28 app/models/concerns/auditable.rb
+badd +32 spec/presenters/passenger_event_log_presenter_spec.rb
+badd +12 app/presenters/passenger_event_log_presenter.rb
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit app/api/api/v2/common/serializer/order_reservation_serializer.rb
+edit ~/koleo/app/controllers/admin/user_passengers_controller.rb
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 3resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 12 - ((11 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 12
+normal! 05|
+wincmd w
+argglobal
+if bufexists(fnamemodify("app/models/passenger.rb", ":p")) | buffer app/models/passenger.rb | else | edit app/models/passenger.rb | endif
+if &buftype ==# 'terminal'
+  silent file app/models/passenger.rb
+endif
+balt ~/koleo/app/controllers/admin/user_passengers_controller.rb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 10 - ((9 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 10
+normal! 03|
+wincmd w
+argglobal
+if bufexists(fnamemodify("app/models/concerns/auditable.rb", ":p")) | buffer app/models/concerns/auditable.rb | else | edit app/models/concerns/auditable.rb | endif
+if &buftype ==# 'terminal'
+  silent file app/models/concerns/auditable.rb
+endif
+balt app/models/passenger.rb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 32 - ((25 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 32
+normal! 020|
+wincmd w
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 3resize ' . ((&columns * 105 + 106) / 212)
+tabnext
+edit spec/presenters/passenger_event_log_presenter_spec.rb
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -47,10 +135,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 130 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 107 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
 argglobal
-balt app/api/api/v2/common/payment_orders_controller.rb
+balt ~/koleo/app/controllers/admin/user_passengers_controller.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -61,19 +149,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 10 - ((9 * winheight(0) + 20) / 40)
+let s:l = 32 - ((26 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 10
+keepjumps 32
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("kamil/SW-3585-pay-by-link-api-cleanup.md", ":p")) | buffer kamil/SW-3585-pay-by-link-api-cleanup.md | else | edit kamil/SW-3585-pay-by-link-api-cleanup.md | endif
+if bufexists(fnamemodify("app/presenters/passenger_event_log_presenter.rb", ":p")) | buffer app/presenters/passenger_event_log_presenter.rb | else | edit app/presenters/passenger_event_log_presenter.rb | endif
 if &buftype ==# 'terminal'
-  silent file kamil/SW-3585-pay-by-link-api-cleanup.md
+  silent file app/presenters/passenger_event_log_presenter.rb
 endif
-balt app/api/api/base/v1/serializer/payment_method_serializer.rb
+balt spec/presenters/passenger_event_log_presenter_spec.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -84,42 +172,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 21 - ((13 * winheight(0) + 20) / 40)
+let s:l = 12 - ((11 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 21
-normal! 0128|
+keepjumps 12
+normal! 07|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 130 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 107 + 119) / 238)
-tabnext
-edit app/api/api/v2/main/payments_controller.rb
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/koleo/app/services/p24/secure/registration_handler.rb
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 56 - ((31 * winheight(0) + 20) / 40)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 56
-normal! 0127|
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
 tabnext 2
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -135,6 +196,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
