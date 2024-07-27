@@ -1,0 +1,17 @@
+pane	KOLEO	0	0	:Z	0	nvim	:/Users/kamilpluszczewicz/koleo	1	nvim	:nvim
+pane	KOLEO	0	0	:Z	1	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	1	1	:*	0	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	1	1	:*	1	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+pane	KOLEO	2	0	:-	0	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+pane	KOLEO	3	0	:	0	kamilpluszczewicz@iMac-Kamil:~/koleo-docker	:/Users/kamilpluszczewicz/koleo-docker	0	zsh	:
+pane	KOLEO	3	0	:	1	kamilpluszczewicz@iMac-Kamil:~/koleo_nuxt	:/Users/kamilpluszczewicz/koleo_nuxt	1	zsh	:
+pane	KOLEO	4	0	:Z	0	kamilpluszczewicz@iMac-Kamil:~/.config	:/Users/kamilpluszczewicz/.config	0	zsh	:
+pane	KOLEO	4	0	:Z	1	nvim	:/Users/kamilpluszczewicz/.config	1	nvim	:nvim
+pane	KOLEO	5	0	:	0	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+window	KOLEO	0	:Editor	0	:Z	6378,201x43,0,0[201x21,0,0,1,201x21,0,22,2]	off
+window	KOLEO	1	:Console	1	:*	6af1,201x43,0,0{100x43,0,0,3,100x43,101,0,4}	off
+window	KOLEO	2	:SSH	0	:-	5bc3,201x43,0,0,14	off
+window	KOLEO	3	:Docker	0	:	6af4,201x43,0,0{100x43,0,0,5,100x43,101,0,6}	off
+window	KOLEO	4	:Environment config	0	:Z	6387,201x43,0,0[201x21,0,0,7,201x21,0,22,8]	off
+window	KOLEO	5	:zsh	0	:	b726,201x43,0,0,9	:
+state	KOLEO	

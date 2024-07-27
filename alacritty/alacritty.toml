@@ -40,9 +40,9 @@ background = '#201c48'
 # fc-list : family | sort -f | grep Nerd
 # Out put can be interpreted as <Font Name>,<Abbreviation of Font name> 
 # Should use <Abbreviatioin of Font name> below
-normal = { family = "BlexMono Nerd Font", style = "Regular" }
+normal = { family = "JetBrainsMonoNL NFM Light" }
 size = 16
-offset = { x = 0, y = 6 }
+offset = { x = 0, y = 5 }
 glyph_offset = { x = 0, y = 0 }
 
 [cursor]
