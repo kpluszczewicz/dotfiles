@@ -64,15 +64,14 @@ local file_path_in_spec = function(file_path_in_app)
 end
 
 vim.api.nvim_create_user_command("LastMigration", function()
-	local migration_list = vim.fn.system({ "ls", "-1", "/Users/kamilpluszczewicz/koleo/db/migrate" })
-	-- It is not allowed to call vim function in callbacks. Need to schedule them.
-	local on_exit = vim.schedule_wrap(function(obj)
-		local last_migration = "~/koleo/db/migrate/" .. obj.stdout
-		vim.cmd("sp " .. last_migration)
-	end)
-	local sys_obj = vim.system({ "tail", "-n 1" }, { stdin = true, text = true }, on_exit)
-	sys_obj:write(migration_list)
-	sys_obj:write(nil)
+	local handle = io.popen("ls -1 ~/koleo/db/migrate | tail -n 1")
+	if handle then
+		local last_migration = handle:read("*a")
+		handle:close()
+		print("vs " .. last_migration)
+	else
+		print("There are no migrations.")
+	end
 end, {})
 
 vim.api.nvim_create_user_command("Rspec", function()
