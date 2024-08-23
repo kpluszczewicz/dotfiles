@@ -81,20 +81,25 @@ vim.api.nvim_create_user_command("Rspec", function()
 	local test_file_path = vim.fn.expand("%")
 	-- local relative_path = string.sub(full_path, cwd_len + 2)
 
-	local file_path_in_spec = nil
 	if not string.find(test_file_path, "spec") then
-		local f = io.open(test_file_path, "r")
-		if f then
-			print("file " .. test_file_path .. " exists.")
-			io.close(f)
+		-- local f = io.open(test_file_path, "r")
+		-- if f then
+		-- 	print("file " .. test_file_path .. " exists.")
+		-- 	io.close(f)
+		-- else
+		-- 	print("File " .. test_file_path .. " doesn't exist!")
+		-- end
+		if vim.g.Rspec and vim.g.Rspec.last_spec_file then
+			test_file_path = vim.g.Rspec.last_spec_file
 		else
-			print("File " .. test_file_path .. " doesn't exist!")
+			return
 		end
 	end
 
-	print("tmux send-keys -t {marked} 'rspec --no-profile " .. test_file_path .. "' Enter")
+	vim.g.Rspec = { last_spec_file = test_file_path }
+	print("tmux send-keys -t {marked} 'C-ubundle exec rspec --no-profile " .. test_file_path .. "' Enter")
 	vim.system(
-		{ "tmux", "send-keys", "-t", "{marked}", "rspec ", "--no-profile ", test_file_path, "Enter" },
+		{ "tmux", "send-keys", "-t", "{marked}", "C-u", "bundle exec rspec ", "--no-profile ", test_file_path, "Enter" },
 		{ text = true }
 	)
 end, {})

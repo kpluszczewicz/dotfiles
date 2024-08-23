@@ -13,22 +13,26 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/koleo/app/controllers/admin/user_passengers_controller.rb
-badd +9 app/models/passenger.rb
-badd +6 app/models/concerns/auditable.rb
-badd +62 spec/presenters/passenger_event_log_presenter_spec.rb
-badd +1 app/presenters/passenger_event_log_presenter.rb
-badd +1 db/str
-badd +1 db/stru
-badd +1 db/struc
+badd +6 app/jobs/push_message_job.rb
+badd +10 app/services/mobile_push_service.rb
+badd +1 app/models/order.rb
+badd +29 ~/koleo/app/models/order/creator.rb
+badd +7 app/jobs/push_ticket_to_mobile_job.rb
+badd +0 app/models/order/refund/push_service.rb
 argglobal
 %argdel
-tabnew +setlocal\ bufhidden=wipe
-tabrewind
-edit ~/koleo/app/controllers/admin/user_passengers_controller.rb
+edit app/jobs/push_ticket_to_mobile_job.rb
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd w
 wincmd _ | wincmd |
 vsplit
 1wincmd h
@@ -42,9 +46,16 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe '1resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
+exe '2resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe '3resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 3resize ' . ((&columns * 105 + 106) / 212)
+exe '4resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 4resize ' . ((&columns * 106 + 106) / 212)
 argglobal
+balt ~/koleo/app/models/order/creator.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -55,19 +66,42 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 6 - ((5 * winheight(0) + 19) / 39)
+let s:l = 7 - ((6 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 6
+keepjumps 7
+normal! 015|
+wincmd w
+argglobal
+if bufexists(fnamemodify("app/models/order/refund/push_service.rb", ":p")) | buffer app/models/order/refund/push_service.rb | else | edit app/models/order/refund/push_service.rb | endif
+if &buftype ==# 'terminal'
+  silent file app/models/order/refund/push_service.rb
+endif
+balt app/services/mobile_push_service.rb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 9) / 19)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("app/models/concerns/auditable.rb", ":p")) | buffer app/models/concerns/auditable.rb | else | edit app/models/concerns/auditable.rb | endif
+if bufexists(fnamemodify("app/services/mobile_push_service.rb", ":p")) | buffer app/services/mobile_push_service.rb | else | edit app/services/mobile_push_service.rb | endif
 if &buftype ==# 'terminal'
-  silent file app/models/concerns/auditable.rb
+  silent file app/services/mobile_push_service.rb
 endif
-balt app/models/passenger.rb
+balt app/jobs/push_ticket_to_mobile_job.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -78,81 +112,46 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 6 - ((5 * winheight(0) + 19) / 39)
+let s:l = 10 - ((9 * winheight(0) + 9) / 19)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 10
+normal! 03|
+wincmd w
+argglobal
+if bufexists(fnamemodify("app/jobs/push_message_job.rb", ":p")) | buffer app/jobs/push_message_job.rb | else | edit app/jobs/push_message_job.rb | endif
+if &buftype ==# 'terminal'
+  silent file app/jobs/push_message_job.rb
+endif
+balt app/services/mobile_push_service.rb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 6 - ((5 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 6
-normal! 07|
+normal! 08|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabnext
-edit app/presenters/passenger_event_log_presenter.rb
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+3wincmd w
+exe '1resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
+exe '2resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-argglobal
-balt db/str
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 5
-normal! 025|
-wincmd w
-argglobal
-if bufexists(fnamemodify("spec/presenters/passenger_event_log_presenter_spec.rb", ":p")) | buffer spec/presenters/passenger_event_log_presenter_spec.rb | else | edit spec/presenters/passenger_event_log_presenter_spec.rb | endif
-if &buftype ==# 'terminal'
-  silent file spec/presenters/passenger_event_log_presenter_spec.rb
-endif
-balt db/stru
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 62 - ((31 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 62
-normal! 029|
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-tabnext 2
+exe '3resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 3resize ' . ((&columns * 105 + 106) / 212)
+exe '4resize ' . ((&lines * 19 + 21) / 42)
+exe 'vert 4resize ' . ((&columns * 106 + 106) / 212)
+tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -167,7 +166,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

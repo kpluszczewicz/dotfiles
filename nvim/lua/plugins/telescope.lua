@@ -163,23 +163,34 @@ return {
 			local wk = require("which-key")
 			require("telescope").load_extension("rails")
 
+			local telescope = require("telescope.builtin")
 			local rails_find = function(title, path)
 				return function()
 					require("telescope.builtin").find_files({ prompt_title = title, cwd = path })
 				end
 			end
 
-			wk.register({
-				r = {
-					name = "[R]ails files browsing",
-					t = { rails_find("Search tests", "spec/"), "[T]ests - Specs" },
-					c = { rails_find("Search controllers", "app/controllers"), "[C]ontrollers" },
-					m = { rails_find("Search models...", "app/models/"), "[M]odels" },
-					v = { rails_find("Search views...", "app/views"), "[V]iews" },
-					i = { rails_find("Search migrations...", "db/migrate"), "M[i]grations" },
-					j = { rails_find("Search jobs...", "app/jobs/"), "[J]obs" },
+			wk.add({
+				{ "<leader>r", group = "[R]ails files browsing" },
+
+				{ "<leader>rt", rails_find("Search tests", "spec/"), desc = "[T]ests - Specs" },
+				{ "<leader>rc", rails_find("Search controllers", "app/controllers"), desc = "[C]ontrollers" },
+				{ "<leader>rm", rails_find("Search models...", "app/models/"), desc = "[M]odels" },
+				{ "<leader>rv", rails_find("Search views...", "app/views"), desc = "[V]iews" },
+				{ "<leader>ri", rails_find("Search migrations...", "db/migrate"), desc = "M[i]grations" },
+				{ "<leader>rj", rails_find("Search jobs...", "app/jobs/"), desc = "[J]obs" },
+				{
+					"<leader>rl",
+					function()
+						telescope.find_files({
+							prompt_title = "Search locales...",
+							cwd = "config/locales",
+							search_file = "yml",
+						})
+					end,
+					desc = "[L]ocales",
 				},
-			}, { prefix = "<leader>" })
+			})
 		end,
 	},
 }

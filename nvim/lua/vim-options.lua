@@ -15,7 +15,7 @@ vim.o.relativenumber = true
 -- Yes, I like it very much! Thank you The Primegean!
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = "a"
+-- vim.o.mouse = "a"
 
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
@@ -59,6 +59,7 @@ vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
 vim.opt.guicursor = "n:blinkwait100-blinkon200-blinkoff150,i-ci:ver30-iCursor-blinkwait100-blinkon200-blinkoff150"
 
 -- Minimal number of screen lines to keep above and below the cursor.

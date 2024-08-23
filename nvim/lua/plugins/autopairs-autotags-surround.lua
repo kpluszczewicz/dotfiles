@@ -2,7 +2,7 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {}, -- this is equalent to setup({}) function
+		opts = {}, -- this is equivalent to setup({}) function
 	},
 	{
 		"windwp/nvim-ts-autotag",

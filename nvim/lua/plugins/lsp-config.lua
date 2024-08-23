@@ -1,14 +1,20 @@
 return {
 	{
-		-- Neovim setup for init.lua and plugin development with full signature help,
-		--  docs and completion for the nvim lua API.
-		"folke/neodev.nvim",
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			},
+		},
 	},
+	{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
+
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("neodev").setup({})
-
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
@@ -58,14 +64,15 @@ return {
 
 			local wk = require("which-key")
 
-			wk.register({
-				e = {
+			wk.add({
+				{
+					"<leader>e",
 					function()
 						vim.diagnostic.open_float()
 					end,
-					"Show diagnostics in float window",
+					desc = "Show diagnostics in float window",
 				},
-			}, { prefix = "<leader>" })
+			})
 		end,
 	},
 	{
@@ -90,11 +97,5 @@ return {
 				},
 			})
 		end,
-	},
-	{
-		"smjonas/inc-rename.nvim",
-		config = function()
-			require("inc_rename").setup()
-		end,
-	},
+	}
 }

@@ -13,19 +13,19 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/koleo/app/controllers/admin/user_passengers_controller.rb
-badd +9 app/models/passenger.rb
-badd +6 app/models/concerns/auditable.rb
-badd +62 spec/presenters/passenger_event_log_presenter_spec.rb
-badd +1 app/presenters/passenger_event_log_presenter.rb
-badd +1 db/str
-badd +1 db/stru
-badd +1 db/struc
+badd +5 ~/koleo/app/models/station_keyword.rb
+badd +13 app/controllers/admin/orders_controller.rb
+badd +4 kamil/SW-3714-clear-station-keywords-cache-on-station-update-visible.md
+badd +17 app/api/api/v2/common/station_keywords_controller.rb
+badd +192 app/models/station.rb
+badd +46 spec/unit/station_spec.rb
+badd +18 config/initializers/cache.rb
+badd +2 app/models/station/group.rb
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit ~/koleo/app/controllers/admin/user_passengers_controller.rb
+edit app/models/station.rb
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -42,9 +42,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+wincmd =
 argglobal
+balt app/api/api/v2/common/station_keywords_controller.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -55,19 +55,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 6 - ((5 * winheight(0) + 19) / 39)
+let s:l = 192 - ((29 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 6
+keepjumps 192
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("app/models/concerns/auditable.rb", ":p")) | buffer app/models/concerns/auditable.rb | else | edit app/models/concerns/auditable.rb | endif
+if bufexists(fnamemodify("spec/unit/station_spec.rb", ":p")) | buffer spec/unit/station_spec.rb | else | edit spec/unit/station_spec.rb | endif
 if &buftype ==# 'terminal'
-  silent file app/models/concerns/auditable.rb
+  silent file spec/unit/station_spec.rb
 endif
-balt app/models/passenger.rb
+balt app/models/station.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -78,17 +78,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 6 - ((5 * winheight(0) + 19) / 39)
+let s:l = 46 - ((23 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 6
+keepjumps 46
 normal! 07|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+wincmd =
 tabnext
-edit app/presenters/passenger_event_log_presenter.rb
+edit app/models/station.rb
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -105,10 +104,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+wincmd =
 argglobal
-balt db/str
+balt app/api/api/v2/common/station_keywords_controller.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -119,19 +117,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 19) / 39)
+let s:l = 60 - ((20 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 025|
+keepjumps 60
+normal! 081|
 wincmd w
 argglobal
-if bufexists(fnamemodify("spec/presenters/passenger_event_log_presenter_spec.rb", ":p")) | buffer spec/presenters/passenger_event_log_presenter_spec.rb | else | edit spec/presenters/passenger_event_log_presenter_spec.rb | endif
+if bufexists(fnamemodify("kamil/SW-3714-clear-station-keywords-cache-on-station-update-visible.md", ":p")) | buffer kamil/SW-3714-clear-station-keywords-cache-on-station-update-visible.md | else | edit kamil/SW-3714-clear-station-keywords-cache-on-station-update-visible.md | endif
 if &buftype ==# 'terminal'
-  silent file spec/presenters/passenger_event_log_presenter_spec.rb
+  silent file kamil/SW-3714-clear-station-keywords-cache-on-station-update-visible.md
 endif
-balt db/stru
+balt app/models/station.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -142,17 +140,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 62 - ((31 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 62
-normal! 029|
+keepjumps 1
+normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-tabnext 2
+wincmd =
+tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -167,7 +163,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

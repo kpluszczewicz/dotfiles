@@ -1,6 +1,4 @@
 return {
-	{ -- plugin that sources lsp and deliver data to cmp
-	},
 	{ -- completion engine that needs external sources
 		"hrsh7th/nvim-cmp",
 		event = { "InsertEnter", "CmdlineEnter" },
@@ -129,10 +127,11 @@ return {
 			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
+				-- TODO: I have to find way to tweak this properly (2024-08-05).
 				-- mapping = cmp.mapping.preset.insert({
-				-- 	["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+				-- 	["<C-]>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 				-- 	-- Select [p]revious item
-				-- 	["<M-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+				-- 	["<C-[>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 				--
 				-- 	-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				-- 	-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -147,7 +146,7 @@ return {
 				-- 	-- Accept ([y]es) the completion.
 				-- 	--  This will auto-import if your LSP supports it.
 				-- 	--  This will expand snippets if the LSP sent a snippet.
-				-- 	["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				-- 	-- ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				-- }),
 				sources = cmp.config.sources({
 					{ name = "path" },

@@ -92,7 +92,14 @@ source <(fzf --zsh)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG="pl_PL.UTF-8"
+export LC_COLLATE="pl_PL.UTF-8"
+export LC_CTYPE="pl_PL.UTF-8"
+export LC_MESSAGES="pl_PL.UTF-8"
+export LC_MONETARY="pl_PL.UTF-8"
+export LC_NUMERIC="pl_PL.UTF-8"
+export LC_TIME="pl_PL.UTF-8"
+export LC_ALL="pl_PL.UTF-8"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -141,8 +148,8 @@ alias ssh-production-210='ssh serwis@192.168.100.210'
 alias ssh-production-211='ssh serwis@192.168.100.211'
 # eval "$(zellij setup --generate-auto-start zsh)"
 
-alias merge-to-sandbox='git switch sandbox && git pull && git merge - && git push'
-alias merge-to-staging='git switch staging && git pull && git merge - && git push'
+alias merge-to-sandbox='git switch sandbox && git pull && git merge - && git push && git switch -'
+alias merge-to-staging='git switch staging && git pull && git merge - && git push && git switch -'
 
 alias ta='tmux attach'
 if [[ "$(uname -n)" == "iMac-Kamil.local" ]]; then
@@ -156,3 +163,16 @@ fi
 
 # return the output of the most recent command that was captured by cap
 # ret () { cat /tmp/capture.out; }
+
+# Yazi shell wrapper
+# From https://yazi-rs.github.io/docs/quick-start
+#   > We suggest using this yy shell wrapper that provides the ability
+#   > to change the current working directory when exiting Yazi.
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}

@@ -39,3 +39,16 @@ require("autocommands")
 require("filetype-features")
 
 require("user-commands")
+
+-- on key <leader>kt search koleo tables
+require("telescope_koleo_db_tables")
+
+-- vimplug
+-- For integration vim-plug and Nvim see https://dev.to/vonheikemen/neovim-using-vim-plug-in-lua-3oom
+local Plug = vim.fn["plug#"]
+vim.call("plug#begin")
+
+Plug("kylef/apiblueprint.vim")
+-- rest of plugins here...
+
+vim.call("plug#end")

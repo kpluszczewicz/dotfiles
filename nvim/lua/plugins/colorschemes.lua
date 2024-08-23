@@ -19,15 +19,4 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 	},
-	{
-		"zaldih/themery.nvim",
-		opts = {
-			themes = { "tokyonight", "catppuccin" }, -- Your list of installed colorschemes
-			themeConfigFile = "~/.config/nvim/lua/theme.lua", -- Described below
-			livePreview = true, -- Apply theme while browsing. Default to true.
-		},
-		enabled = false,
-		lazy = false,
-		priority = 1000,
-	},
 }
