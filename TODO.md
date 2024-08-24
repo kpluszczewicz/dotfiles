@@ -1,5 +1,12 @@
 # Ideas to improve config
 
 ## Create telescope shortcut to search db/structure.
-- make command to automatically open db/structure in preview window
-  for quick searches - maybe something to do a quick lookup.
+[✔️] Make command to automatically open db/structure in preview window
+    for quick searches - maybe something to do a quick lookup.
+    Result -> telescope_koleo_db_tables.lua
+[ ] When selecting table with <CR> maybe switch then to Telescope
+    selected table columns?
+
+## Think about command line keybinding
+  At the time being <C-n> and <C-p> are used by cmp which is not
+  necessarily convenient.
