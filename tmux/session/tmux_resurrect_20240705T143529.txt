@@ -1,0 +1,15 @@
+pane	KOLEO	0	1	:*Z	0	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+pane	KOLEO	0	1	:*Z	1	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	1	0	:-Z	0	git diff db/structure.sql	:/Users/kamilpluszczewicz/koleo	1	git	:/Applications/Xcode.app/Contents/Developer/usr/bin/git diff db/structure.sql
+pane	KOLEO	1	0	:-Z	1	kamilpluszczewicz@iMac-Kamil:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	2	0	:	0	docker-compose up	:/Users/kamilpluszczewicz/koleo-docker	0	docker-compose	:docker-compose up
+pane	KOLEO	2	0	:	1	kamilpluszczewicz@iMac-Kamil:~/koleo_nuxt	:/Users/kamilpluszczewicz/koleo_nuxt	1	zsh	:
+pane	KOLEO	3	0	:	0	nvim alacritty/alacritty.toml	:/Users/kamilpluszczewicz/.config	0	nvim	:nvim alacritty/alacritty.toml
+pane	KOLEO	3	0	:	1	kamilpluszczewicz@iMac-Kamil:~/.config	:/Users/kamilpluszczewicz/.config	1	zsh	:
+pane	KOLEO	4	0	:	0	ssh serwis@85.194.245.135	:/Users/kamilpluszczewicz/koleo	1	ssh	:ssh serwis@85.194.245.135
+window	KOLEO	0	:Editor	1	:*Z	1f61,212x45,0,0[212x22,0,0,6,212x22,0,23,11]	off
+window	KOLEO	1	:Tests	0	:-Z	3f42,212x45,0,0{106x45,0,0,1,105x45,107,0,7}	off
+window	KOLEO	2	:Docker	0	:	3f41,212x45,0,0{106x45,0,0,2,105x45,107,0,3}	off
+window	KOLEO	3	:Environment config	0	:	3e34,212x45,0,0[212x22,0,0,4,212x22,0,23,9]	off
+window	KOLEO	4	:ssh	0	:	bfe5,212x45,0,0,8	:
+state	KOLEO	

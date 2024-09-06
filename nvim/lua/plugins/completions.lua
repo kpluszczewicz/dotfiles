@@ -126,8 +126,8 @@ return {
 
 			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
 				-- TODO: I have to find way to tweak this properly (2024-08-05).
+				-- mapping = cmp.mapping.preset.cmdline(),
 				-- mapping = cmp.mapping.preset.insert({
 				-- 	["<C-]>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 				-- 	-- Select [p]revious item
