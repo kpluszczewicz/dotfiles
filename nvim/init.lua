@@ -43,6 +43,8 @@ require("user-commands")
 -- on key <leader>kt search koleo tables
 require("telescope_koleo_db_tables")
 
+require("telescope_koleo_factories")
+
 -- vimplug
 -- For integration vim-plug and Nvim see https://dev.to/vonheikemen/neovim-using-vim-plug-in-lua-3oom
 local Plug = vim.fn["plug#"]

@@ -13,7 +13,7 @@ option_as_alt = "Both"
 
 [window]
 decorations = "Full"
-opacity = 1
+opacity = 0.98
 padding = { x = 5, y = 0 }
 
 

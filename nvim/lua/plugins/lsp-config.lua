@@ -21,7 +21,7 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
@@ -87,7 +87,6 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"tsserver",
 					"pyright",
 					-- rubocop: Don't install rubocop here for the sake of rails extension,
 					-- that can't be easily installed via Mason. I installed them
@@ -97,5 +96,5 @@ return {
 				},
 			})
 		end,
-	}
+	},
 }
