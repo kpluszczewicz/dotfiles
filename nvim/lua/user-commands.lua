@@ -96,9 +96,16 @@ vim.api.nvim_create_user_command("Rspec", function()
 	end
 
 	vim.g.Rspec = { last_spec_file = test_file_path }
-	print("tmux send-keys -t {marked} 'C-ubundle exec rspec --no-profile " .. test_file_path .. "' Enter")
-	vim.system(
-		{ "tmux", "send-keys", "-t", "{marked}", "C-u", "bundle exec rspec ", "--no-profile ", test_file_path, "Enter" },
-		{ text = true }
-	)
+	print("tmux send-keys -t KOLEO:Console.0 'C-ubundle exec rspec --no-profile " .. test_file_path .. "' Enter")
+	vim.system({
+		"tmux",
+		"send-keys",
+		"-t",
+		"KOLEO:Console.0",
+		"C-u",
+		"bundle exec rspec ",
+		"--no-profile ",
+		test_file_path,
+		"Enter",
+	}, { text = true })
 end, {})

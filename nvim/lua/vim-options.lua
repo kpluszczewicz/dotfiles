@@ -89,3 +89,6 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,termina
 -- [[ Spell checking ]]
 vim.o.spell = true
 vim.o.spelllang = "en,pl"
+
+-- [[ shellredir ]]
+vim.o.shellredir = ">%s"
