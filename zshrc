@@ -176,3 +176,7 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# -- THE FUCK
+eval $(thefuck --alias)
+

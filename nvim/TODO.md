@@ -1,18 +1,15 @@
 # TODO
 
-Visit page and setup multiple key rings for ssh:
-https://pratapsharma.io/github-miltiple-key
+[ ] - map visual selection to :%s/{visual_selection}/{cursor_here}/g
+[ ] - map <C-p> and <C-n> in command line to browse command history, not completions.
+[ ] - allow to open particular file with colon and line (either from shell and in nvim)
+    Ie.: vim index.html:20
+         vim app/models/user.rb:1337
+    This plugin lervag/file-line.git unfortunately doesn't work.
+    It would be nice to have it in lua:
+    Rewrite to lua git@github.com:lervag/file-line.git.
+    
 
-## Mapping for git status, and vertical previewing strategy
-
-## See how to pass starting query search term to prompt
-
-## Set some keybindings for Telescope prompt
-Right now I have to use arrows, which is rather inconvenient.
-
-## Yank file path for selected entry in telescope
-
-From page [https://github.com/nvim-telescope/telescope-file-browser.nvim/issues/328]
 ```lua
 require("telescope").setup({
     -- .. other settings
