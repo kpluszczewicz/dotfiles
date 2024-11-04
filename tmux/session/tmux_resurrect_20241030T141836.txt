@@ -1,0 +1,36 @@
+pane	ANSIBLE	0	1	:*	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/ansible2	:/Users/kamilpluszczewicz/ansible2	1	zsh	:
+pane	ANSIBLE	0	1	:*	1	nvim envy-instrukcja-z-kiwi.md	:/Users/kamilpluszczewicz/ansible2	0	nvim	:nvim envy-instrukcja-z-kiwi.md
+pane	API_DOC	0	0	:-	0	nvim	:/Users/kamilpluszczewicz/api_doc	1	nvim	:nvim
+pane	API_DOC	0	0	:-	1	nvim	:/Users/kamilpluszczewicz/api_doc	0	nvim	:nvim
+pane	API_DOC	1	1	:*	0	lazygit	:/Users/kamilpluszczewicz/api_doc	1	lazygit	:lazygit
+pane	API_DOC	1	1	:*	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/api_doc	:/Users/kamilpluszczewicz/api_doc	0	zsh	:
+pane	KOLEO	0	0	:	0	nvim -S 	:/Users/kamilpluszczewicz/koleo	0	nvim	:nvim -S /Users/kamilpluszczewicz/.config/nvim/sessions/session-koleo-SW-3983-typ-stacji-w-serializerach.vim
+pane	KOLEO	0	0	:	1	bin/rails db	:/Users/kamilpluszczewicz/koleo	1	psql	:/opt/homebrew/bin/psql koleo_development
+pane	KOLEO	1	1	:*Z	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+pane	KOLEO	1	1	:*Z	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	2	0	:-Z	0	lazygit	:/Users/kamilpluszczewicz/koleo	1	lazygit	:lazygit
+pane	KOLEO	2	0	:-Z	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	3	0	:	0	ssh serwis@85.194.245.135	:/Users/kamilpluszczewicz/koleo	1	ssh	:ssh serwis@85.194.245.135
+pane	KOLEO	3	0	:	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	3	0	:	2	ssh serwis@85.194.245.135 tail -f www/koleo/current/log/staging.log	:/Users/kamilpluszczewicz/koleo-docker	0	ssh	:ssh serwis@85.194.245.135 tail -f www/koleo/current/log/staging.log
+pane	KOLEO	4	0	:	0	docker-compose up	:/Users/kamilpluszczewicz/koleo-docker	0	docker-compose	:docker-compose up
+pane	KOLEO	4	0	:	1	docker-compose exec koleo bash	:/Users/kamilpluszczewicz/koleo-docker	1	docker-compose	:docker-compose exec koleo bash
+pane	KOLEO	4	0	:	2	docker-compose exec koleo bash	:/Users/kamilpluszczewicz/koleo-docker	0	docker-compose	:docker-compose exec koleo bash
+pane	KOLEO	5	0	:	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/.config	:/Users/kamilpluszczewicz/.config	1	zsh	:
+pane	PREZENTACJA	0	0	:-	0	nvim kamil-prezentacja-terminal-tools.md	:/Users/kamilpluszczewicz/presenterm/examples	0	nvim	:nvim kamil-prezentacja-terminal-tools.md
+pane	PREZENTACJA	0	0	:-	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/presenterm/examples	:/Users/kamilpluszczewicz/presenterm/examples	1	zsh	:
+pane	PREZENTACJA	0	0	:-	2	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo/spec	:/Users/kamilpluszczewicz/koleo/spec	0	zsh	:
+pane	PREZENTACJA	1	1	:*Z	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/presenterm	:/Users/kamilpluszczewicz/presenterm	0	zsh	:
+pane	PREZENTACJA	1	1	:*Z	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/presenterm/examples	:/Users/kamilpluszczewicz/presenterm/examples	1	zsh	:
+window	ANSIBLE	0	:Editor	1	:*	28bd,212x40,0,0{106x40,0,0,1,105x40,107,0,2}	off
+window	API_DOC	0	:nvim	0	:-	beb6,238x44,0,0{119x44,0,0,3,118x44,120,0,27}	:
+window	API_DOC	1	:lazygit	1	:*	4501,238x44,0,0[238x22,0,0,28,238x21,0,23,30]	:
+window	KOLEO	0	:Editor	0	:	92cf,238x44,0,0[238x22,0,0,4,238x21,0,23,31]	off
+window	KOLEO	1	:Console	1	:*Z	7cbd,238x44,0,0{119x44,0,0,5,118x44,120,0,6}	off
+window	KOLEO	2	:LazyGit	0	:-Z	4a9a,238x44,0,0[238x26,0,0,7,238x17,0,27,8]	off
+window	KOLEO	3	:SSH	0	:	a7db,238x44,0,0[238x21,0,0,9,238x22,0,22{119x22,0,22,10,118x22,120,22,11}]	off
+window	KOLEO	4	:Docker	0	:	da48,238x44,0,0[238x22,0,0,12,238x21,0,23{119x21,0,23,25,118x21,120,23,26}]	off
+window	KOLEO	5	:Environment config	0	:	5fe4,238x44,0,0,15	off
+window	PREZENTACJA	0	:zsh	0	:-	4581,212x40,0,0{106x40,0,0,16,105x40,107,0[105x26,107,0,17,105x13,107,27,18]}	:
+window	PREZENTACJA	1	:zsh	1	:*Z	2a90,212x40,0,0[212x20,0,0,19,212x19,0,21,20]	:
+state	KOLEO	API_DOC

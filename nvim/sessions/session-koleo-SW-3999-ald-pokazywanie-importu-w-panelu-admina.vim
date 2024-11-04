@@ -13,116 +13,37 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +9 config/initializers/doorkeeper.rb
-badd +3 kamil/zapamietywanie-sesji/token.http
-badd +3 ~/koleo/kamil/flipper-api.http
-badd +6 app/api/api/v2/main/users_controller.rb
-badd +30 app/api/api/v2/main/module/user_selector.rb
-badd +9 app/api/api/android/v1/module/doorkeeper_application_protector.rb
-badd +17 app/controllers/sessions_controller.rb
-badd +176 ~/koleo/config/initializers/devise.rb
+badd +57 ~/koleo/app/api/api/v2/common/orders_controller.rb
+badd +432 app/models/order.rb
+badd +341 .env-docker
+badd +1 app/utils/firebase_ids_refresher.rb
+badd +31 app/services/tos_assigner.rb
+badd +33 app/api/api/v2/common/services/tos_assigner.rb
+badd +1027 app/models/ticket.rb
+badd +0 app/models/connection.rb
+badd +87 config/routes/koleo_api_v2_routes.rb
+badd +63 ~/koleo/config/routes.rb
+badd +5 app/jobs/ald_import_job.rb
+badd +2 ~/koleo/app/jobs/kml_import_job.rb
+badd +124 app/models/carrier.rb
+badd +4 spec/services/hades/kml/ald_importer_spec.rb
+badd +4 spec/jobs/skpl_import_job_spec.rb
+badd +30 config/clock/imports.rb
+badd +1 ~/koleo/spec/jobs/ald_import_job_spec.rb
+badd +16 app/jobs/import_job.rb
+badd +8 app/services/hades/kml/ald_importer.rb
+badd +57 app/views/admin/imports/index.html.haml
+badd +1 ~/koleo/app/views/admin/imports/show.html.haml
+badd +1 app/models/import_version.rb
+badd +10 app/controllers/admin/imports_controller.rb
+badd +5 app/presenters/import_presenter.rb
+badd +126 app/models/train.rb
+badd +31 app/models/brand.rb
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit kamil/zapamietywanie-sesji/token.http
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe '1resize ' . ((&lines * 20 + 22) / 44)
-exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)
-exe '2resize ' . ((&lines * 20 + 22) / 44)
-exe 'vert 2resize ' . ((&columns * 118 + 119) / 238)
-exe 'vert 3resize ' . ((&columns * 119 + 119) / 238)
-argglobal
-balt config/initializers/doorkeeper.rb
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 10) / 20)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 3
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("app/api/api/v2/main/users_controller.rb", ":p")) | buffer app/api/api/v2/main/users_controller.rb | else | edit app/api/api/v2/main/users_controller.rb | endif
-if &buftype ==# 'terminal'
-  silent file app/api/api/v2/main/users_controller.rb
-endif
-balt app/api/api/android/v1/module/doorkeeper_application_protector.rb
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 10) / 20)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 5
-normal! 040|
-wincmd w
-argglobal
-if bufexists(fnamemodify("rest_nvim_result\#Response", ":p")) | buffer rest_nvim_result\#Response | else | edit rest_nvim_result\#Response | endif
-if &buftype ==# 'terminal'
-  silent file rest_nvim_result\#Response
-endif
-balt kamil/zapamietywanie-sesji/token.http
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-exe '1resize ' . ((&lines * 20 + 22) / 44)
-exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)
-exe '2resize ' . ((&lines * 20 + 22) / 44)
-exe 'vert 2resize ' . ((&columns * 118 + 119) / 238)
-exe 'vert 3resize ' . ((&columns * 119 + 119) / 238)
-tabnext
-edit config/initializers/doorkeeper.rb
+edit app/controllers/admin/imports_controller.rb
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -142,7 +63,7 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 238)
 argglobal
-balt ~/koleo/config/initializers/devise.rb
+balt app/models/brand.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -153,19 +74,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 20) / 41)
+let s:l = 10 - ((9 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
-normal! 010|
+keepjumps 10
+normal! 053|
 wincmd w
 argglobal
-if bufexists(fnamemodify("app/controllers/sessions_controller.rb", ":p")) | buffer app/controllers/sessions_controller.rb | else | edit app/controllers/sessions_controller.rb | endif
+if bufexists(fnamemodify("app/presenters/import_presenter.rb", ":p")) | buffer app/presenters/import_presenter.rb | else | edit app/presenters/import_presenter.rb | endif
 if &buftype ==# 'terminal'
-  silent file app/controllers/sessions_controller.rb
+  silent file app/presenters/import_presenter.rb
 endif
-balt app/api/api/v2/main/module/user_selector.rb
+balt app/controllers/admin/imports_controller.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -176,12 +97,75 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 17 - ((16 * winheight(0) + 20) / 41)
+let s:l = 31 - ((18 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
-normal! 010|
+keepjumps 31
+normal! 044|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 238)
+tabnext
+edit app/views/admin/imports/index.html.haml
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 238)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 56 - ((18 * winheight(0) + 20) / 41)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 56
+normal! 030|
+wincmd w
+argglobal
+if bufexists(fnamemodify("app/presenters/import_presenter.rb", ":p")) | buffer app/presenters/import_presenter.rb | else | edit app/presenters/import_presenter.rb | endif
+if &buftype ==# 'terminal'
+  silent file app/presenters/import_presenter.rb
+endif
+balt app/views/admin/imports/index.html.haml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 5 - ((4 * winheight(0) + 20) / 41)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 5
+normal! 03|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)

@@ -74,7 +74,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 # available, but disabled: git
-plugins=(ssh-agent)
+plugins=(ssh-agent jq)
 
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
@@ -179,4 +179,34 @@ function yy() {
 
 # -- THE FUCK
 eval $(thefuck --alias)
+eval "$(zoxide init zsh)"
 
+# -- make Ctrl-u delete from cursor to beginning of the line (it doesn't work on zsh by default)
+bindkey \^U backward-kill-line
+
+# Ctrl-w - delete a full WORD (including colon, dot, comma, quotes...)
+my-backward-kill-word () {
+  # Add colon, comma, single/double quotes to word chars
+  local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:,"'"'"
+  zle -f kill # Append to the kill ring on subsequent kills.
+  zle backward-kill-word
+}
+zle -N my-backward-kill-word
+bindkey '^w' my-backward-kill-word
+
+my-backward-word () {
+  # Add colon, comma, single/double quotes to word chars
+  # But it's added locally - it does not affect global variable.
+  local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:,"'"'"
+  zle backward-word
+}
+zle -N my-backward-word
+bindkey '^[B' my-backward-word
+
+my-forward-word () {
+  # Add colon, comma, single/double quotes to word chars
+  local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:,"'"'"
+  zle forward-word
+}
+zle -N my-forward-word
+bindkey '^[F' my-forward-word

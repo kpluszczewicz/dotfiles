@@ -1,0 +1,31 @@
+pane	ANSIBLE	0	1	:*	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/ansible2	:/Users/kamilpluszczewicz/ansible2	1	zsh	:
+pane	ANSIBLE	0	1	:*	1	nvim envy-instrukcja-z-kiwi.md	:/Users/kamilpluszczewicz/ansible2	0	nvim	:nvim envy-instrukcja-z-kiwi.md
+pane	API_DOC	0	1	:*	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/api_doc	:/Users/kamilpluszczewicz/api_doc	1	zsh	:
+pane	KOLEO	0	1	:*Z	0	nvim	:/Users/kamilpluszczewicz/koleo	1	nvim	:nvim
+pane	KOLEO	0	1	:*Z	1	rails c	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	1	0	:Z	0	rails c	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+pane	KOLEO	1	0	:Z	1	nvim	:/Users/kamilpluszczewicz/koleo	0	nvim	:nvim
+pane	KOLEO	2	0	:	0	lazygit	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+pane	KOLEO	3	0	:	0	ssh serwis@85.194.245.135	:/Users/kamilpluszczewicz/koleo	1	zsh	:
+pane	KOLEO	3	0	:	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo	:/Users/kamilpluszczewicz/koleo	0	zsh	:
+pane	KOLEO	3	0	:	2	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo-docker	:/Users/kamilpluszczewicz/koleo-docker	0	zsh	:
+pane	KOLEO	4	0	:-	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo-docker	:/Users/kamilpluszczewicz/koleo-docker	1	zsh	:
+pane	KOLEO	4	0	:-	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo-docker	:/Users/kamilpluszczewicz/koleo-docker	0	zsh	:
+pane	KOLEO	4	0	:-	2	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo/kamil	:/Users/kamilpluszczewicz/koleo/kamil	0	zsh	:
+pane	KOLEO	5	0	:	0	nvim	:/Users/kamilpluszczewicz/.config	1	zsh	:
+pane	PREZENTACJA	0	0	:-	0	nvim kamil-prezentacja-terminal-tools.md	:/Users/kamilpluszczewicz/presenterm/examples	0	nvim	:nvim kamil-prezentacja-terminal-tools.md
+pane	PREZENTACJA	0	0	:-	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/presenterm/examples	:/Users/kamilpluszczewicz/presenterm/examples	1	zsh	:
+pane	PREZENTACJA	0	0	:-	2	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/koleo/spec	:/Users/kamilpluszczewicz/koleo/spec	0	zsh	:
+pane	PREZENTACJA	1	1	:*Z	0	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/presenterm	:/Users/kamilpluszczewicz/presenterm	0	zsh	:
+pane	PREZENTACJA	1	1	:*Z	1	kamilpluszczewicz@MacBook-Air-kamilpluszczewicz:~/presenterm/examples	:/Users/kamilpluszczewicz/presenterm/examples	1	zsh	:
+window	ANSIBLE	0	:Editor	1	:*	8b1b,83x24,0,0{41x24,0,0,1,41x24,42,0,2}	off
+window	API_DOC	0	:zsh	1	:*	da1f,83x24,0,0,20	:
+window	KOLEO	0	:Editor	1	:*Z	798c,153x38,0,0{76x38,0,0,3,76x38,77,0,4}	off
+window	KOLEO	1	:Console	0	:Z	814d,83x24,0,0{40x24,0,0,5,42x24,41,0,6}	off
+window	KOLEO	2	:LazyGit	0	:	b3e4,83x24,0,0,7	off
+window	KOLEO	3	:SSH	0	:	42da,83x24,0,0[83x11,0,0,8,83x12,0,12{41x12,0,12,9,41x12,42,12,10}]	off
+window	KOLEO	4	:Docker	0	:-	480e,83x24,0,0[83x12,0,0,11,83x11,0,13{42x11,0,13,12,40x11,43,13,13}]	off
+window	KOLEO	5	:Environment config	0	:	5a23,83x24,0,0,14	off
+window	PREZENTACJA	0	:zsh	0	:-	7e9a,83x24,0,0{41x24,0,0,15,41x24,42,0[41x18,42,0,16,41x5,42,19,17]}	:
+window	PREZENTACJA	1	:zsh	1	:*Z	098d,83x24,0,0[83x12,0,0,18,83x11,0,13,19]	:
+state	KOLEO	

@@ -165,21 +165,25 @@ return {
 			require("telescope").load_extension("rails")
 
 			local telescope = require("telescope.builtin")
-			local rails_find = function(title, path)
+			local rails_find = function(title, dirs)
 				return function()
-					require("telescope.builtin").find_files({ prompt_title = title, cwd = path })
+					require("telescope.builtin").find_files({ prompt_title = title, search_dirs = dirs })
 				end
 			end
 
 			wk.add({
 				{ "<leader>r", group = "[R]ails files browsing" },
 
-				{ "<leader>rt", rails_find("Search tests", "spec/"), desc = "[T]ests - Specs" },
-				{ "<leader>rc", rails_find("Search controllers", "app/controllers"), desc = "[C]ontrollers" },
-				{ "<leader>rm", rails_find("Search models...", "app/models/"), desc = "[M]odels" },
-				{ "<leader>rv", rails_find("Search views...", "app/views"), desc = "[V]iews" },
-				{ "<leader>ri", rails_find("Search migrations...", "db/migrate"), desc = "M[i]grations" },
-				{ "<leader>rj", rails_find("Search jobs...", "app/jobs/"), desc = "[J]obs" },
+				{ "<leader>rt", rails_find("Search tests", { "spec/" }), desc = "[T]ests - Specs" },
+				{
+					"<leader>rc",
+					rails_find("Search controllers", { "app/controllers", "app/api/api/" }),
+					desc = "[C]ontrollers",
+				},
+				{ "<leader>rm", rails_find("Search models...", { "app/models/" }), desc = "[M]odels" },
+				{ "<leader>rv", rails_find("Search views...", { "app/views" }), desc = "[V]iews" },
+				{ "<leader>ri", rails_find("Search migrations...", { "db/migrate" }), desc = "M[i]grations" },
+				{ "<leader>rj", rails_find("Search jobs...", { "app/jobs/" }), desc = "[J]obs" },
 				{
 					"<leader>rl",
 					function()
