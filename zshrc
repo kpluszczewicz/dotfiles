@@ -123,6 +123,7 @@ alias cdkd="cd ~/koleo-docker"
 alias dcup="docker-compose up"
 alias dce="docker-compose exec"
 alias restart="echo \"Restarting koleo service\"; docker-compose restart koleo"
+alias byebug-background="docker-compose exec koleo bash ./byebug-background.sh"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 eval "$(rbenv init - zsh)"
@@ -144,6 +145,8 @@ alias ssh-production-22='ssh serwis@192.168.100.22'
 alias ssh-production-23='ssh serwis@192.168.100.23'
 alias ssh-production-110='ssh serwis@192.168.100.110'
 alias ssh-production-111='ssh serwis@192.168.100.111'
+alias ssh-production-112='ssh serwis@192.168.100.112'
+alias ssh-production-113='ssh serwis@192.168.100.113'
 alias ssh-production-210='ssh serwis@192.168.100.210'
 alias ssh-production-211='ssh serwis@192.168.100.211'
 # eval "$(zellij setup --generate-auto-start zsh)"
@@ -210,3 +213,4 @@ my-forward-word () {
 }
 zle -N my-forward-word
 bindkey '^[F' my-forward-word
+
