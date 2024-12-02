@@ -1,1 +1,1 @@
- vim.cmd("colorscheme tokyonight-day"); vim.g.theme_id = 1
+ vim.cmd("colorscheme catppuccin"); vim.g.theme_id = 1
