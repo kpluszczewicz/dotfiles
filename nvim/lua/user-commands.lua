@@ -68,7 +68,7 @@ vim.api.nvim_create_user_command("LastMigration", function()
 	if handle then
 		local last_migration = handle:read("*a")
 		handle:close()
-		print("vs " .. last_migration)
+		vim.cmd("vs ~/koleo/db/migrate/" .. last_migration)
 	else
 		print("There are no migrations.")
 	end
