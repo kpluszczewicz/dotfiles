@@ -33,6 +33,10 @@ return {
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
 							["ac"] = "@class.outer",
+							["ib"] = "@block.inner",
+							["ab"] = "@block.outer",
+							["iP"] = "@parameter.inner",
+							["aP"] = "@parameter.outer",
 							-- You can optionally set descriptions to the mappings (used in the desc parameter of
 							-- nvim_buf_set_keymap) which plugins like which-key display
 							["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
@@ -60,7 +64,7 @@ return {
 						-- * query_string: eg '@function.inner'
 						-- * selection_mode: eg 'v'
 						-- and should return true of false
-						include_surrounding_whitespace = true,
+						include_surrounding_whitespace = false,
 					},
 				},
 				{
