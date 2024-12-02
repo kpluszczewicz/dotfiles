@@ -213,4 +213,4 @@ my-forward-word () {
 }
 zle -N my-forward-word
 bindkey '^[F' my-forward-word
-
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'

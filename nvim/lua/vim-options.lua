@@ -92,3 +92,41 @@ vim.o.spelllang = "en,pl"
 
 -- [[ shellredir ]]
 vim.o.shellredir = ">%s"
+
+function dupa()
+	print("dupa")
+end
+
+function TagFunc(pattern, flags, info)
+	local function compareFilenames(item1, item2)
+		local f1 = item1["filename"]
+		local f2 = item2["filename"]
+		return f1 >= f2
+	end
+
+	local result = vim.fn.taglist(pattern)
+	-- vim.fn.sort(result, compareFilenames)
+	return result
+end
+
+vim.cmd([[
+	function CompareFilenames(item1, item2)
+		let f1 = a:item1['filename']
+		let f2 = a:item2['filename']
+		return f1 >=# f2 ? \ -1 : f1 <=# f2 ? 1 : 0
+	endfunction
+
+	function TagFunc1(pattern, flags, info)
+		let class_name = expand('<cword>') 
+		"let splitted_pattern = split(a:pattern, '::')
+		let splitted_pattern = split(class_name, '::')
+		let path_part = join(splitted_pattern, '/')
+	  let last_part = splitted_pattern[-1]
+
+	  let result = taglist(last_part)
+		call filter(result, $"v:val[\"filename\"] =~ \"{path_part}\"")
+
+	  return result
+	endfunc
+	set tagfunc=TagFunc1
+]])

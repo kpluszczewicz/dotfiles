@@ -81,6 +81,9 @@ vim.keymap.set("c", "<C-p>", "<Up>", {})
 -- vim.keymap.set("n", "<D-]>", "<C-i>", {})
 
 vim.keymap.set("n", "§", "<cmd>Rspec<cr>", { desc = "Rspec current file" })
+vim.keymap.set("n", "<M-]>", function()
+	require("telescope.builtin").tags({ default_text = vim.fn.expand("<cword>") })
+end, { desc = "Tag current <cword>" })
 
 -- emoji.nvim
 vim.keymap.set("i", "<C-t>e", require("emoji").insert, { desc = "[S]earch [E]moji" })

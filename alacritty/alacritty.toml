@@ -91,4 +91,5 @@ bindings = [
   { key = "d", mods = "Option", chars = "\u001bd"}, # Pass Alt-k instead of printing special character
   # { key = "p", mods = "Option", chars = "\u001bp"}, # For Alt-f navigation
   # { key = "n", mods = "Option", chars = "\u001bn"}, # For Alt-f navigation
+  { key = "]", mods = "Option", chars="\u001b]"}, # For Alt-f navigation
 ]
