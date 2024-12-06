@@ -1,5 +1,11 @@
 # Ideas to improve config
 
+## Enhance tag searching
+-- NOTE: For now (12/03/2024) disable custom tagfunc.
+--	It needs to be corrected:
+--		- if word under cursor is ruby constant with '::' then path should be checked in taglist,
+--		- otherwise return normal taglist.
+
 ## Create telescope shortcut to search db/structure.
 [✔️] Make command to automatically open db/structure in preview window
     for quick searches - maybe something to do a quick lookup.
