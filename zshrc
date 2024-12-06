@@ -149,6 +149,9 @@ alias ssh-production-112='ssh serwis@192.168.100.112'
 alias ssh-production-113='ssh serwis@192.168.100.113'
 alias ssh-production-210='ssh serwis@192.168.100.210'
 alias ssh-production-211='ssh serwis@192.168.100.211'
+alias ssh-production-212='ssh serwis@192.168.100.212'
+alias ssh-production-213='ssh serwis@192.168.100.213'
+
 # eval "$(zellij setup --generate-auto-start zsh)"
 
 alias merge-to-sandbox='git switch sandbox && git pull && git merge - && git push && git switch -'
