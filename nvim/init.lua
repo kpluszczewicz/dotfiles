@@ -51,7 +51,7 @@ local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
 
 Plug("kylef/apiblueprint.vim")
-Plug("lervag/file-line")
+-- Plug("lervag/file-line")
 -- rest of plugins here...
 
 vim.call("plug#end")
