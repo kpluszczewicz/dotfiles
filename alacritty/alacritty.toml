@@ -29,7 +29,7 @@ transparent_background_colors = true
 # Out put can be interpreted as <Font Name>,<Abbreviation of Font name> 
 # Should use <Abbreviatioin of Font name> below
 normal = { family = "JetBrainsMonoNL NFM Light" }
-size = 16
+size = 14
 offset = { x = 0, y = 5 }
 glyph_offset = { x = 0, y = 2 }
 
