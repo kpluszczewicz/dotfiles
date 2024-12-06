@@ -13,7 +13,7 @@ return {
 			{
 				"<leader>c",
 				function()
-					local path = vim.fn.expand("%")
+					local path = vim.fn.expand("%:.")
 					vim.fn.setreg("+", path)
 					vim.notify('Copied "' .. path .. '" to the clipboard!')
 				end,
