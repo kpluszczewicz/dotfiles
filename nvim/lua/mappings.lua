@@ -70,7 +70,7 @@ vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
 vim.keymap.set("x", "<C-j>", "<Down>", { desc = "Browse command history forward" })
 vim.keymap.set("x", "<C-k>", "<Up>", { desc = "Browse command history backward" })
 
-vim.keymap.set("c", "<M-b>", "<S-Left>", {})
+-- vim.keymap.set("c", "<M-b>", "<S-Left>", {})
 -- vim.keymap.set("c", "<T-b>", "<S-Left>", {})
 vim.keymap.set("c", "<M-f>", "<S-Right>", {})
 vim.keymap.set("c", "<C-n>", "<Down>", {})
