@@ -302,7 +302,7 @@ git:
   commitPrefix:
     # pattern to match on. E.g. for 'feature/AB-123' to match on the AB-123 use "^\\w+\\/(\\w+-\\w+).*"
     # SW-2332-
-    pattern: "^(SW-\\w+)[a-z-]+"
+    pattern: "^(\\w+-\\d+).*"
 
     # Replace directive. E.g. for 'feature/AB-123' to start the commit message with 'AB-123 ' use "[$1] "
     replace: '$1 '
