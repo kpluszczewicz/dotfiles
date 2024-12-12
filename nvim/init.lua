@@ -44,6 +44,7 @@ require("user-commands")
 require("telescope_koleo_db_tables")
 
 require("telescope_koleo_factories")
+require("telescope_search_routes")
 
 -- vimplug
 -- For integration vim-plug and Nvim see https://dev.to/vonheikemen/neovim-using-vim-plug-in-lua-3oom
