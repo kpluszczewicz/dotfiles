@@ -120,7 +120,7 @@ fi
 alias zshconfig="nvim ~/.zshrc"
 alias cdk="cd ~/koleo/"
 alias cdkd="cd ~/koleo-docker"
-alias dcup="docker-compose up"
+alias dcup="docker-compose up -d && docker-compose attach koleo"
 alias dce="docker-compose exec"
 alias restart="echo \"Restarting koleo service\"; docker-compose restart koleo"
 alias byebug-background="docker-compose exec koleo bash ./byebug-background.sh"
@@ -215,3 +215,11 @@ my-forward-word () {
 zle -N my-forward-word
 bindkey '^[F' my-forward-word
 alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+alias generate-routes-file="rails routes --no-expanded | grep -e '^--\[' -e '^Prefix' -e '^URI' -e '^Controller#Action' -e '^Verb' > /Users/kamilpluszczewicz/koleo/kamil/routes.txt"
+
+alias lg=lazygit
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
