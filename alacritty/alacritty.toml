@@ -72,6 +72,13 @@ bindings = [
   # { key = "9", mods = "Command", command = { program = "/opt/homebrew/bin/zellij", args =  ["action", "go-to-tab", "9"]} },
   { key = "t", mods = "Command", command = { program = "/opt/homebrew/bin/tmux", args =  ["new-window"]} },
   { key = "f", mods = "Command|Option", action = "ToggleSimpleFullscreen"},
+
+  # Go to pane and maximize out
+  { key = "j", mods = "Control|Shift", command = { program = "/opt/homebrew/bin/tmux", args = ["select-pane", "-D", ";", "resize-pane", "-Z" ] }},
+  { key = "k", mods = "Control|Shift", command = { program = "/opt/homebrew/bin/tmux", args = ["select-pane", "-U", ";", "resize-pane", "-Z" ] }},
+  { key = "h", mods = "Control|Shift", command = { program = "/opt/homebrew/bin/tmux", args = ["select-pane", "-R", ";", "resize-pane", "-Z" ] }},
+  { key = "l", mods = "Control|Shift", command = { program = "/opt/homebrew/bin/tmux", args = ["select-pane", "-L", ";", "resize-pane", "-Z" ] }},
+
   { key = "d", mods = "Command", action = "ScrollHalfPageDown"},
   { key = "u", mods = "Command", action = "ScrollHalfPageUp"},
   { key = "Slash", mods = "Control", chars = "\u001f" }, # fix <C-/> problem
