@@ -107,3 +107,14 @@ vim.keymap.set("v", "<C-r>", function()
 	-- send parsed substitution command to command line
 	vim.api.nvim_input("<Esc>:%s/" .. pattern .. "//<Left>")
 end)
+
+-- Advent of nvim -- TJ DeVries
+vim.keymap.set("n", "<leader><leader>x", ":%lua<CR>")
+vim.keymap.set("n", "<leader>x", ":.lua<CR>")
+vim.keymap.set("v", "<leader>x", ":.lua<CR>")
+
+local function lines_to_play()
+	print("Hello world 1")
+	print("Hello world 2")
+	print("Hello world 3")
+end

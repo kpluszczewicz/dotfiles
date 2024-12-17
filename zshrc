@@ -183,8 +183,6 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-eval "$(zoxide init zsh)"
-
 # -- make Ctrl-u delete from cursor to beginning of the line (it doesn't work on zsh by default)
 bindkey \^U backward-kill-line
 

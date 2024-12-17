@@ -56,3 +56,5 @@ Plug("kylef/apiblueprint.vim")
 -- rest of plugins here...
 
 vim.call("plug#end")
+
+require("tj_course.something")

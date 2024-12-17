@@ -12,23 +12,25 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("InsertLeave", {
-	pattern = { "respondent*.txt" },
-	callback = function()
-		vim.cmd("normal `[hhv`]v")
-		vim.cmd("normal ma")
-		local arg = [[s/\%V\(\a\|,\) \(\u\)/\1 \l\2/gce]]
-		print(arg)
-		vim.cmd(arg)
-		vim.cmd("normal `a")
-	end,
-})
+-- NOTE: This one is a history. Was used during transcribing interviews for Ola.
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	pattern = { "respondent*.txt" },
+-- 	callback = function()
+-- 		vim.cmd("normal `[hhv`]v")
+-- 		vim.cmd("normal ma")
+-- 		local arg = [[s/\%V\(\a\|,\) \(\u\)/\1 \l\2/gce]]
+-- 		print(arg)
+-- 		vim.cmd(arg)
+-- 		vim.cmd("normal `a")
+-- 	end,
+-- })
 
-vim.api.nvim_create_autocmd("TermOpen", {
-	callback = function()
-		vim.notify("Use <Esc><Esc> or <C-\\><C-n> to enter normal mode")
-	end,
-})
+-- NOTE: I'm not using terminal inside vim for some time - tmux instead.
+-- vim.api.nvim_create_autocmd("TermOpen", {
+-- 	callback = function()
+-- 		vim.notify("Use <Esc><Esc> or <C-\\><C-n> to enter normal mode")
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "*.rb",
